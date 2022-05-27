@@ -13,6 +13,7 @@ namespace ITP4915
 	public partial class Form1 : Form
 	{
 		int empID;
+		private Form activeForm;
 
 		public Form1()
 		{
@@ -47,6 +48,26 @@ namespace ITP4915
 		{
 			empID = int.Parse(v);
 		}
+		public void OpenChildForm(Form childForm, object btnSender)
+		{
+			if (activeForm != null)
+				activeForm.Close();
+			//ActivateButton(btnSender);
 
-	}
+			activeForm = childForm;
+			childForm.TopLevel = false;
+			childForm.FormBorderStyle = FormBorderStyle.None;
+			childForm.Dock = DockStyle.Fill;
+			this.panelDesktopPane.Controls.Add(childForm);
+			this.panelDesktopPane.Tag = childForm;
+			childForm.BringToFront();
+			childForm.Show();
+			//lblTitle.Text = childForm.Text;
+		}
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+			OpenChildForm(new CreateOrder(), sender);
+		}
+    }
 }

@@ -109,6 +109,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RJcontrols\RJtextbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJtextbox.Designer.cs">
+      <DependentUpon>RJtextbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewSalesOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RJcontrols\RJtextbox.resx">
+      <DependentUpon>RJtextbox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewSalesOrder.resx">
       <DependentUpon>ViewSalesOrder.cs</DependentUpon>
     </EmbeddedResource>

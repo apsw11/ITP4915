@@ -39,7 +39,7 @@ namespace ITP4915
 
 		}
 
-		private int getEmpID()
+		public int getEmpID()
 		{
 			return empID;
 		}
@@ -67,7 +67,31 @@ namespace ITP4915
 
         private void button4_Click(object sender, EventArgs e)
         {
+			OpenChildForm(new Home(), sender);
+		}
+
+        private void panelDesktopPane_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
 			OpenChildForm(new CreateOrder(), sender);
+		}
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+			OpenChildForm(new ViewSalesOrder(), sender);
+		}
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+		public void Home(object sender, PaintEventArgs e)
+        {
+			OpenChildForm(new Home(), sender);
 		}
     }
 }

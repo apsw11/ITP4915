@@ -39,6 +39,9 @@
     <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
@@ -89,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemModel.cs" />
     <Compile Include="CreateOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,12 +131,21 @@
     <Compile Include="RJcontrols\RJtextbox.Designer.cs">
       <DependentUpon>RJtextbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCustomer.Designer.cs">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewSalesOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewSalesOrder.Designer.cs">
       <DependentUpon>ViewSalesOrder.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateOrder.resx">
+      <DependentUpon>CreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="RJcontrols\RJtextbox.resx">
       <DependentUpon>RJtextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomer.resx">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSalesOrder.resx">
       <DependentUpon>ViewSalesOrder.cs</DependentUpon>

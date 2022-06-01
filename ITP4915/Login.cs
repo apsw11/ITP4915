@@ -51,7 +51,7 @@ namespace ITP4915
 
 			sqlConn.Open();
 			sqlCmd.Connection = sqlConn;
-			sqlCmd.CommandText = "SELECT emp_id, password FROM ITP4915.emp WHERE emp_id = @empID";
+			sqlCmd.CommandText = "SELECT * FROM ITP4915.emp WHERE emp_id = @empID";
 			sqlCmd.CommandType = CommandType.Text;
 			sqlCmd.Parameters.AddWithValue("@empID", textEmpID.Text);
 			sqlRd = sqlCmd.ExecuteReader();
@@ -59,12 +59,17 @@ namespace ITP4915
 			if (sqlRd.Read()) {
 				string empid = (sqlRd["emp_id"].ToString());
 				string password = (sqlRd["password"].ToString());
+				string position = (sqlRd["position"].ToString());
+				string storeID = (sqlRd["storeID"].ToString());
+				
 				if (empid == textEmpID.Text && password == textBoxPS.Text) {
 					MessageBox.Show("Login Success!");
 
 					Form1 F1 = new Form1();
 					profile P1 = new profile();
 					F1.setEmpID(empid);
+					F1.setPosition(position);
+					F1.setstoreID(storeID);
 					DialogResult result = F1.ShowDialog();
 					Close();
 

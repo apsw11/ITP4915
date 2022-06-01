@@ -16,5 +16,10 @@ namespace ITP4915
         {
             InitializeComponent();
         }
-    }
+
+		private void Home_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

@@ -22,7 +22,7 @@ namespace ITP4915
 		MySqlDataReader sqlRd;
 		DataSet DS = new DataSet();
 
-		int empID;
+		string empID;
 		public profile()
 		{
 			InitializeComponent();
@@ -57,16 +57,18 @@ namespace ITP4915
 		}
 
 
-		
 
-		private int getEmpID() {
+
+		private string getEmpID()
+		{
 			return empID;
 		}
 
 		internal void setEmpID(string v)
 		{
-			empID=int.Parse(v);
+			empID = v;
 		}
+
 
 		private void label1_Click(object sender, EventArgs e)
 		{

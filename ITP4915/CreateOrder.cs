@@ -28,6 +28,7 @@ namespace ITP4915
         public string Itemname;
         Form1 f1 = new Form1(); 
         String sqlQuery;
+        string payment;
         public CreateOrder()
         {
             InitializeComponent();
@@ -67,7 +68,7 @@ namespace ITP4915
             using (MySqlConnection con = new MySqlConnection(connString))
             {
 
-                using (MySqlCommand cmd = new MySqlCommand("Select w.warehouseID,i.itemID,i.itemName,i.detail,i.price,w.qty FROM warehouseItem as w,Item as i Where i.itemID = w.itemID", con))
+                using (MySqlCommand cmd = new MySqlCommand("Select w.warehouseID,i.itemID,i.itemName,i.detail,i.price,w.qty FROM warehouseItem as w,item as i Where i.itemID = w.itemID", con))
                 {
                     con.Open();
 
@@ -89,7 +90,7 @@ namespace ITP4915
 
             using (MySqlConnection con = new MySqlConnection(connString))
             {
-                using (MySqlCommand cmd = new MySqlCommand("Select s.instoreID,i.itemID,i.itemName,i.detail,i.price,s.qty FROM instoreItem as s,Item as i Where i.itemID = s.itemID", con))
+                using (MySqlCommand cmd = new MySqlCommand("Select s.storeID,i.itemID,i.itemName,i.detail,i.price,s.qty FROM instoreItem as s,Item as i Where i.itemID = s.itemID", con))
                 {
                     con.Open();
 
@@ -149,50 +150,25 @@ namespace ITP4915
             
 
             
-            //get orderid
-            sqlConn.ConnectionString = "server=localhost;user id=root;password=64959441;database=ITP4915";
-            sqlConn.Open();
-            sqlCmd.CommandText = "SELECT AUTO_INCREMENT  FROM information_schema.tables WHERE table_name = 'SalesOrder' AND table_schema = DATABASE(); ";
-
-
-            string orderid = (sqlRd[1].ToString());
-
-           /* while (rdr.Read())
-            {
-                string col = rdr["colName"].ToString();
-            }
-
-            //
-            using (SqlDataReader rdr = cmd.ExecuteReader())
-            {
-                while (rdr.Read())
-                {
-                    var myString = rdr.GetString(0); //The 0 stands for "the 0'th column", so the first column of the result.
-                                                     // Do somthing with this rows string, for example to put them in to a list
-                    listDeclaredElsewhere.Add(myString);
-                }
-            }
-           */
-
-            sqlConn.Close();
-
             
-            //sql
+
+
             sqlConn.ConnectionString = "server=localhost;user id=root;password=64959441;database=ITP4915";
 
-       
+
             try
             {
                 sqlConn.Open();
                 //salesorder
-                sqlQuery = "insert into ITP4915.SalesOrder (orderID,customerId,storeID,emp_id)" +
-                 "value('" + textBox3.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
+                sqlQuery = "insert into ITP4915.SalesOrder (orderID,orderDate,amount,delivery,payment,customerID,storeID,emp_id" +
+                    ")" +
+                 "value(' NULL  ', NULL  '," + label10.Text + "','" + textBox6.Text + "','" + payment + "','" + textBox3.Text + "','" + textBox8.Text + "','" + textBox7.Text + "');  ";
 
 
                 sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
                 sqlRd = sqlCmd.ExecuteReader();
 
-                
+
                 sqlConn.Close();
             }
             catch (Exception ex)
@@ -205,22 +181,27 @@ namespace ITP4915
             }
             upLoadData();
 
+            sqlConn.Open();
+            sqlQuery = "Select MAX(orderId) FROM SalesOrder; ";
+            sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+            int orderId = (int)sqlCmd.ExecuteScalar();
+            sqlConn.Close();
 
-           
+
             //orderitem_loop
 
             //update cart data
             dataGridView1.DataSource = SharedData.Items;
             for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
                 {
-                    string constring = "server=localhost;user id=root;password=64959441;database=ITP4915";
-                    string query = "insert into ITP4915.OrderItem(orderID, wsID, qty) values ('" + 15 + "', @wsid,@qty);";
-                    MySqlConnection conDataBase = new MySqlConnection(constring);
-                    MySqlCommand cmdDataBase = new MySqlCommand(query, conDataBase);
-                    MySqlDataReader myReader;
+                string constring = "server=localhost;user id=root;password=64959441;database=ITP4915"; sqlConn.Close();
+                string query = "insert into ITP4915.OrderItem(orderID, itemID, qty) values ('" + orderId + "', @itemid,@qty);";
+                MySqlConnection conDataBase = new MySqlConnection(constring);
+                MySqlCommand cmdDataBase = new MySqlCommand(query, conDataBase);
+                MySqlDataReader myReader;
 
-                    
-                    cmdDataBase.Parameters.AddWithValue("@wsid", dataGridView1.Rows[i].Cells[4].Value);
+
+                    cmdDataBase.Parameters.AddWithValue("@itemid", dataGridView1.Rows[i].Cells[0].Value);
                     cmdDataBase.Parameters.AddWithValue("@qty", dataGridView1.Rows[i].Cells[2].Value);
                     //cmdDataBase.Parameters.Clear();
 
@@ -291,14 +272,17 @@ namespace ITP4915
 
         private void button10_Click(object sender, EventArgs e)
         {
-            sqlConn.ConnectionString = "server=localhost;user id=root;password=64959441;database=ITP4915";
-            sqlConn.Open();
-            sqlCmd.CommandText = "SELECT AUTO_INCREMENT  FROM information_schema.tables WHERE table_name = 'SalesOrder' AND table_schema = DATABASE(); ";
+            
+        }
 
-            sqlRd = sqlCmd.ExecuteReader();
-            string orderid = (sqlRd[1].ToString());
-            textBox9.Text = orderid;
-            sqlConn.Close();
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            payment = "credit card";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            payment = "cash";
         }
     } 
 }

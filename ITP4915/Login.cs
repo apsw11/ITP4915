@@ -67,10 +67,14 @@ namespace ITP4915
 
 					Form1 F1 = new Form1();
 					profile P1 = new profile();
+					
 					F1.setEmpID(empid);
+					CreateOrder.getID.empID = empid;
+					CreateOrder.getID.storeID = storeID;
 					F1.setPosition(position);
 					F1.setstoreID(storeID);
 					DialogResult result = F1.ShowDialog();
+					
 					Close();
 
 				}

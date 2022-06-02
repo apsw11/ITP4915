@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data.cs" />
     <Compile Include="ItemModel.cs" />
     <Compile Include="CreateOrder.cs">
       <SubType>Form</SubType>

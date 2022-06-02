@@ -39,7 +39,10 @@ namespace ITP4915
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			labelEmpID.Text ="Employee ID:" + Convert.ToString ( getEmpID());
+			CreateOrder co = new CreateOrder();
+			
+			labelEmpID.Text ="Employee ID:" + empID;
+			//Convert.ToString (getEmpID());
 
 			if (getPosition()== "Manager") { //判斷顯示 Modify Item
 			buttonModifyItem.Visible = true;

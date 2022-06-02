@@ -27,8 +27,12 @@ namespace ITP4915
         public string price;
         public string Itemname;
         Form1 f1 = new Form1(); 
+        Data da = new Data();
         String sqlQuery;
         string payment;
+        string wsid, itemid;
+        public int amount;
+        
         public CreateOrder()
         {
             InitializeComponent();
@@ -53,10 +57,14 @@ namespace ITP4915
 
         private void CreateOrder_Load(object sender, EventArgs e)
         {
-            textBox7.Text = Convert.ToString(f1.getEmpID());
+            textBox7.Text = getID.empID;
+            textBox8.Text = getID.storeID;
+            amount = da.getAmount();
             textBox3.Text = Customer.customerId;
             textBox4.Text = Customer.customerName;
             textBox5.Text = Customer.phoneNum;
+            label10.Text = da.getAmount().ToString();
+
 
         }
         private DataTable GetWarehouseItem()
@@ -129,13 +137,23 @@ namespace ITP4915
             
             ItemModel model = new ItemModel
             {
-                Wsid  =  textBox2.Text,
-                ItemId = textBox1.Text,
+                Wsid  =  wsid,
+                ItemId = itemid,
                 ItemName = Itemname,
                 Quantity = 1,
                 Price = Convert.ToDecimal(price)
             };
             SharedData.Items.Add(model);
+            
+            int x = Int32.Parse(price);
+
+            amount += x;
+
+            da.setAmount(amount);
+
+            label10.Text = amount.ToString();
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -162,7 +180,7 @@ namespace ITP4915
                 //salesorder
                 sqlQuery = "insert into ITP4915.SalesOrder (orderID,orderDate,amount,delivery,payment,customerID,storeID,emp_id" +
                     ")" +
-                 "value(' NULL  ', NULL  '," + label10.Text + "','" + textBox6.Text + "','" + payment + "','" + textBox3.Text + "','" + textBox8.Text + "','" + textBox7.Text + "');  ";
+                 " value(NULL, now()," + amount + ",NULL "   + ",'" + payment + "','" + textBox3.Text + "','" + textBox8.Text + "','" + textBox7.Text + "');  ";
 
 
                 sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
@@ -192,10 +210,10 @@ namespace ITP4915
 
             //update cart data
             dataGridView1.DataSource = SharedData.Items;
-            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count-2; i++)
                 {
                 string constring = "server=localhost;user id=root;password=64959441;database=ITP4915"; sqlConn.Close();
-                string query = "insert into ITP4915.OrderItem(orderID, itemID, qty) values ('" + orderId + "', @itemid,@qty);";
+                string query = "insert into ITP4915.orderItem(orderID, itemID, qty) values ('" + orderId + "', @itemid,@qty);";
                 MySqlConnection conDataBase = new MySqlConnection(constring);
                 MySqlCommand cmdDataBase = new MySqlCommand(query, conDataBase);
                 MySqlDataReader myReader;
@@ -238,8 +256,8 @@ namespace ITP4915
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.CurrentCell != null && dataGridView1.CurrentCell.Value != null) { 
-            textBox1.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            wsid = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            itemid = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             price = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
             Itemname= dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             }
@@ -264,6 +282,12 @@ namespace ITP4915
             public static string phoneNum;
 
         }
+        public class getID
+        {
+            public static string empID;
+            public static string storeID;
+            
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -280,9 +304,18 @@ namespace ITP4915
             payment = "credit card";
         }
 
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            textBox3.Text = Customer.customerId;
+            textBox4.Text = Customer.customerName;
+            textBox5.Text = Customer.phoneNum;
+        }
+
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             payment = "cash";
         }
-    } 
+        
+
+    }
 }

@@ -173,5 +173,10 @@ namespace ITP4915
 			r.setEmpID(getEmpID());
 			DialogResult result = r.ShowDialog();
 		}
-	}
+
+        private void buttonViewCustomer_Click(object sender, EventArgs e)
+        {
+			OpenChildForm(new ViewCustomer(), sender);
+		}
+    }
 }

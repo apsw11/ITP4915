@@ -16,7 +16,7 @@ namespace ITP4915
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new ViewCustomer());
+			Application.Run(new Login());
 		}
 	}
 }

@@ -93,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="data.cs" />
+    <Compile Include="Date.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Date.Designer.cs">
+      <DependentUpon>Date.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemModel.cs" />
     <Compile Include="CreateOrder.cs">
       <SubType>Form</SubType>
@@ -158,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="CreateOrder.resx">
       <DependentUpon>CreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Date.resx">
+      <DependentUpon>Date.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

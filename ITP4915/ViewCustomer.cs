@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using MySql.Data;
-
+using System.Runtime;
 
 
 namespace ITP4915
@@ -25,6 +25,8 @@ namespace ITP4915
         MySqlDataAdapter DtA = new MySqlDataAdapter();
         MySqlDataReader sqlRd;
         DataSet DS = new DataSet();
+        string search,customerID;
+
 
         public String customerName,customerId,PhoneNum;
 
@@ -36,19 +38,27 @@ namespace ITP4915
         }
        
        
-        private void upLoadData()
+        private DataTable upLoadData()
         {
-            sqlConn.ConnectionString = "server=localhost;user id=root;password=64959441;database=ITP4915";
+            
+            DataTable dtEmployees = new DataTable();
 
-            sqlConn.Open();
-            sqlCmd.Connection = sqlConn;
-            sqlCmd.CommandText = "SELECT * FROM ITP4915.customer";
+            string connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
 
-            sqlRd = sqlCmd.ExecuteReader();
-            sqlDt.Load(sqlRd);
-            sqlRd.Close();
-            sqlConn.Close();
-            guna2DataGridView1.DataSource = sqlDt;
+            using (MySqlConnection con = new MySqlConnection(connString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM customer" + search , con))
+                {
+                    con.Open();
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    dtEmployees.Load(reader);
+                }
+            }
+
+            return dtEmployees;
+
         }
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -57,43 +67,71 @@ namespace ITP4915
 
         private void ViewCustomer_Load(object sender, EventArgs e)
         {
-            upLoadData();
+            
+
+            dataGridView1.DataSource = upLoadData();
+            button2.Visible = false;
+            button3.Visible = false;
+            if (CreateOrder.Customer.ccheck == 1)
+            {
+                button2.Visible = true;
+                button3.Visible = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1 != null && textBox2 != null && textBox3 != null)
+            dataGridView1.DataSource = upLoadData();
+            customerID = dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells[0].Value.ToString();
+            customerID = customerID.Substring(2);
+            int acustomerID = Int32.Parse(customerID) + 1;
+            customerID = acustomerID.ToString();
+            customerID = "CA" + customerID.PadLeft(4, '0');
+
+
+
+
+            if (!string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                if (richTextBox1 != null)
+                if (!string.IsNullOrWhiteSpace(maskedTextBox1.Text))
                 {
 
-                    // upLoadDat
-                    sqlConn.ConnectionString = "server=localhost;user id=root;password=64959441;database=ITP4915";
 
-                    try
+                    if (!string.IsNullOrWhiteSpace(richTextBox1.Text))
                     {
-                        sqlConn.Open();
-                        sqlQuery = "insert into ITP4915.customer (customerID,customerName,address,PhoneNum)" +
-                         "value('" + textBox1.Text + "','" + textBox2.Text +"','" + richTextBox1.Text +"','" + textBox3.Text + "')";
+
+                        // upLoadDat
+                        sqlConn.ConnectionString = "server=localhost;user id=root;password=64959441;database=ITP4915";
+
+                        try
+                        {
+                            sqlConn.Open();
+                            sqlQuery = "insert into ITP4915.customer (customerID,customerName,address,PhoneNum)" +
+                             "value('" + customerID + "','" + textBox2.Text + "','" + richTextBox1.Text + "','" + maskedTextBox1.Text + "')";
 
 
-                        sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
-                        sqlRd = sqlCmd.ExecuteReader();
-                        
+                            sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+                            sqlRd = sqlCmd.ExecuteReader();
 
 
-                        sqlConn.Close();
+
+                            sqlConn.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        finally
+                        {
+                            sqlConn.Close();
+                        }
+                        dataGridView1.DataSource = upLoadData();
                     }
-                    catch(Exception ex) { 
-                    MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-                        sqlConn.Close();
-                    }
-                    upLoadData();
+                    else MessageBox.Show("Please type address!");
                 }
+                else MessageBox.Show("Please type phoneNumber!");
             }
+            else MessageBox.Show("Please type name!");
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
@@ -101,11 +139,45 @@ namespace ITP4915
 
         }
 
-        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            customerName = guna2DataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            customerId = guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            PhoneNum = guna2DataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            customerName = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            customerId = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            PhoneNum = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            search = null;
+            search = " where (customerID like '%" + textBox4.Text + "%' ";
+            search += "or customerName like '%" + textBox4.Text + "%' ";
+            search += "or address like '%" + textBox4.Text + "%' ";
+            search += "or PhoneNum like '%" + textBox4.Text + "%')";
+
+
+            dataGridView1.DataSource = upLoadData();
+
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
 
         }
 
@@ -115,8 +187,11 @@ namespace ITP4915
             CreateOrder.Customer.customerId = customerId;
             CreateOrder.Customer.customerName = customerName;
             CreateOrder.Customer.phoneNum = PhoneNum;
+            CreateOrder.Customer.ccheck = 0;
             CreateOrder c = new CreateOrder();
+
             c.updataCustomer();
+
             this.Close();
         }
     }

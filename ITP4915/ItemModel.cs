@@ -13,7 +13,8 @@ namespace ITP4915
         private string itemId;
         private string itemName;
         private string wsid;
-        private decimal qty, price;
+        private decimal  price;
+        private int qty;
 
         public string ItemId
         {
@@ -25,7 +26,7 @@ namespace ITP4915
             get => itemName;
             set { itemName = value; OnPropertyChanged(); }
         }
-        public decimal Quantity
+        public int Quantity
         {
             get => qty;
             set { qty = value; OnPropertyChanged(); }
@@ -44,6 +45,7 @@ namespace ITP4915
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
 
         // This is to notify the grid if any of the properties are updated
         private void OnPropertyChanged([CallerMemberName] string name = null)

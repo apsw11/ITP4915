@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.instoreID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.warehouseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,61 +51,97 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.choicebox = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox8 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox7 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.guna2GroupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.guna2GroupBox2.SuspendLayout();
+            this.guna2GroupBox3.SuspendLayout();
+            this.guna2GroupBox4.SuspendLayout();
+            this.choicebox.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 179);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 62;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(520, 263);
+            this.dataGridView1.Size = new System.Drawing.Size(747, 447);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 149);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(-1, 41);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
+            this.button1.Size = new System.Drawing.Size(129, 37);
             this.button1.TabIndex = 1;
             this.button1.Text = "Store";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(119, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Warehouse";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(224, 149);
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(-1, 78);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 23);
+            this.button3.Size = new System.Drawing.Size(129, 37);
             this.button3.TabIndex = 8;
             this.button3.Text = "Cart";
             this.button3.UseVisualStyleBackColor = true;
@@ -113,9 +149,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(621, 82);
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button4.Location = new System.Drawing.Point(73, 604);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(194, 39);
+            this.button4.Size = new System.Drawing.Size(186, 30);
             this.button4.TabIndex = 9;
             this.button4.Text = "Select customer";
             this.button4.UseVisualStyleBackColor = true;
@@ -123,9 +160,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(621, 463);
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button5.Location = new System.Drawing.Point(1044, 610);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(100, 24);
             this.button5.TabIndex = 10;
             this.button5.Text = "Clear";
             this.button5.UseVisualStyleBackColor = true;
@@ -133,9 +171,10 @@
             // 
             // Submit
             // 
-            this.Submit.Location = new System.Drawing.Point(772, 463);
+            this.Submit.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Submit.Location = new System.Drawing.Point(1150, 610);
             this.Submit.Name = "Submit";
-            this.Submit.Size = new System.Drawing.Size(75, 23);
+            this.Submit.Size = new System.Drawing.Size(95, 24);
             this.Submit.TabIndex = 11;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = true;
@@ -144,62 +183,76 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 41);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(6, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(75, 21);
             this.label1.TabIndex = 12;
-            this.label1.Text = "StoreID";
+            this.label1.Text = "StoreID :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 89);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(243, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 12);
+            this.label2.Size = new System.Drawing.Size(69, 21);
             this.label2.TabIndex = 13;
-            this.label2.Text = "empID";
+            this.label2.Text = "empID :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 41);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(68, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 12);
+            this.label3.Size = new System.Drawing.Size(100, 21);
             this.label3.TabIndex = 14;
             this.label3.Text = "CustomerID";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(523, 40);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(36, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 12);
+            this.label4.Size = new System.Drawing.Size(132, 21);
             this.label4.TabIndex = 15;
             this.label4.Text = "CustomerPhone";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(222, 89);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(39, 116);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 12);
+            this.label5.Size = new System.Drawing.Size(129, 21);
             this.label5.TabIndex = 15;
             this.label5.Text = "CustomerName";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 468);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.Size = new System.Drawing.Size(42, 19);
             this.label6.TabIndex = 16;
             this.label6.Text = "Total";
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(538, 208);
+            this.button8.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button8.ForeColor = System.Drawing.Color.Black;
+            this.button8.Location = new System.Drawing.Point(246, 308);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(75, 34);
             this.button8.TabIndex = 24;
             this.button8.Text = "Add";
             this.button8.UseVisualStyleBackColor = true;
@@ -207,98 +260,89 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(538, 237);
+            this.button9.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(327, 308);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.Size = new System.Drawing.Size(75, 36);
             this.button9.TabIndex = 25;
             this.button9.Text = "Remove";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(506, 142);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(42, 31);
-            this.button10.TabIndex = 27;
-            this.button10.Text = "serach";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // instoreID
             // 
             this.instoreID.DataPropertyName = "instoreID";
             this.instoreID.HeaderText = "instoreID";
+            this.instoreID.MinimumWidth = 8;
             this.instoreID.Name = "instoreID";
             this.instoreID.ReadOnly = true;
+            this.instoreID.Width = 150;
             // 
             // warehouseID
             // 
             this.warehouseID.DataPropertyName = "warehouseID";
             this.warehouseID.HeaderText = "warehouseID";
+            this.warehouseID.MinimumWidth = 8;
             this.warehouseID.Name = "warehouseID";
             this.warehouseID.ReadOnly = true;
+            this.warehouseID.Width = 150;
             // 
             // itemId
             // 
             this.itemId.DataPropertyName = "ItemID";
             this.itemId.HeaderText = "ItemID";
+            this.itemId.MinimumWidth = 8;
             this.itemId.Name = "itemId";
             this.itemId.ReadOnly = true;
+            this.itemId.Width = 150;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(331, 38);
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox3.Location = new System.Drawing.Point(170, 61);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(186, 22);
+            this.textBox3.Size = new System.Drawing.Size(186, 29);
             this.textBox3.TabIndex = 30;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(331, 80);
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox4.Location = new System.Drawing.Point(170, 113);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(186, 22);
+            this.textBox4.Size = new System.Drawing.Size(186, 29);
             this.textBox4.TabIndex = 31;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(621, 37);
+            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox5.Location = new System.Drawing.Point(170, 162);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(186, 22);
+            this.textBox5.Size = new System.Drawing.Size(186, 29);
             this.textBox5.TabIndex = 32;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(314, 147);
+            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox6.Location = new System.Drawing.Point(514, 514);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(186, 22);
+            this.textBox6.Size = new System.Drawing.Size(213, 25);
             this.textBox6.TabIndex = 33;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(70, 86);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(124, 22);
-            this.textBox7.TabIndex = 34;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(70, 40);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(124, 22);
-            this.textBox8.TabIndex = 35;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(123, 32);
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(130, 59);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(72, 16);
+            this.radioButton1.Size = new System.Drawing.Size(109, 25);
             this.radioButton1.TabIndex = 37;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "credit card";
@@ -308,68 +352,45 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(14, 32);
+            this.radioButton2.ForeColor = System.Drawing.Color.White;
+            this.radioButton2.Location = new System.Drawing.Point(21, 59);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(43, 16);
+            this.radioButton2.Size = new System.Drawing.Size(62, 25);
             this.radioButton2.TabIndex = 38;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "cash";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(607, 331);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 55);
-            this.groupBox1.TabIndex = 39;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Payment";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(74, 468);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(7, 487);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(11, 12);
+            this.label10.Size = new System.Drawing.Size(17, 19);
             this.label10.TabIndex = 40;
             this.label10.Text = "0";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(541, 77);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(61, 31);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "update";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(549, 279);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(472, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(20, 12);
+            this.label8.Size = new System.Drawing.Size(45, 21);
             this.label8.TabIndex = 43;
-            this.label8.Text = "qty";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(538, 294);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 22);
-            this.textBox1.TabIndex = 44;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.label8.Text = "Qty :";
             // 
             // button7
             // 
-            this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(607, 392);
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Location = new System.Drawing.Point(3, 246);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(248, 50);
+            this.button7.Size = new System.Drawing.Size(388, 42);
             this.button7.TabIndex = 45;
             this.button7.Text = "Date";
             this.button7.UseVisualStyleBackColor = true;
@@ -378,64 +399,334 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(120, 468);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(46, 487);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 12);
+            this.label7.Size = new System.Drawing.Size(19, 19);
             this.label7.TabIndex = 46;
             this.label7.Text = "+";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(137, 468);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(92, 487);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(11, 12);
+            this.label9.Size = new System.Drawing.Size(17, 19);
             this.label9.TabIndex = 47;
             this.label9.Text = "0";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(445, 516);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 21);
+            this.label11.TabIndex = 54;
+            this.label11.Text = "Search:";
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(21, 56);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(53, 25);
+            this.radioButton4.TabIndex = 1;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Yes";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged_1);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(160, 56);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(51, 25);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "No";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged_1);
+            // 
+            // guna2GroupBox1
+            // 
+            this.guna2GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.guna2GroupBox1.BorderThickness = 0;
+            this.guna2GroupBox1.Controls.Add(this.groupBox2);
+            this.guna2GroupBox1.Controls.Add(this.groupBox1);
+            this.guna2GroupBox1.Controls.Add(this.button7);
+            this.guna2GroupBox1.Controls.Add(this.button9);
+            this.guna2GroupBox1.Controls.Add(this.button8);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(137)))), ((int)(((byte)(220)))));
+            this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
+            this.guna2GroupBox1.FillColor = System.Drawing.Color.Empty;
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
+            this.guna2GroupBox1.Location = new System.Drawing.Point(17, 197);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(405, 340);
+            this.guna2GroupBox1.TabIndex = 56;
+            this.guna2GroupBox1.Text = "Pay ";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.radioButton4);
+            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Location = new System.Drawing.Point(23, 27);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(316, 100);
+            this.groupBox2.TabIndex = 47;
+            this.groupBox2.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 21);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Delivery ?";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Location = new System.Drawing.Point(23, 114);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(316, 100);
+            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(10, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 21);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Payment";
+            // 
+            // guna2GroupBox2
+            // 
+            this.guna2GroupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.guna2GroupBox2.BorderThickness = 0;
+            this.guna2GroupBox2.Controls.Add(this.textBox4);
+            this.guna2GroupBox2.Controls.Add(this.label3);
+            this.guna2GroupBox2.Controls.Add(this.guna2GroupBox1);
+            this.guna2GroupBox2.Controls.Add(this.label5);
+            this.guna2GroupBox2.Controls.Add(this.textBox3);
+            this.guna2GroupBox2.Controls.Add(this.textBox5);
+            this.guna2GroupBox2.Controls.Add(this.label4);
+            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(137)))), ((int)(((byte)(220)))));
+            this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0);
+            this.guna2GroupBox2.FillColor = System.Drawing.Color.Empty;
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
+            this.guna2GroupBox2.Location = new System.Drawing.Point(826, 51);
+            this.guna2GroupBox2.Name = "guna2GroupBox2";
+            this.guna2GroupBox2.Size = new System.Drawing.Size(422, 547);
+            this.guna2GroupBox2.TabIndex = 57;
+            this.guna2GroupBox2.Text = "Customer  Info";
+            this.guna2GroupBox2.Click += new System.EventHandler(this.guna2GroupBox2_Click_1);
+            // 
+            // guna2GroupBox3
+            // 
+            this.guna2GroupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.guna2GroupBox3.BorderThickness = 0;
+            this.guna2GroupBox3.Controls.Add(this.label14);
+            this.guna2GroupBox3.Controls.Add(this.label6);
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(137)))), ((int)(((byte)(220)))));
+            this.guna2GroupBox3.CustomBorderThickness = new System.Windows.Forms.Padding(0);
+            this.guna2GroupBox3.FillColor = System.Drawing.Color.Empty;
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
+            this.guna2GroupBox3.Location = new System.Drawing.Point(3, 505);
+            this.guna2GroupBox3.Name = "guna2GroupBox3";
+            this.guna2GroupBox3.Size = new System.Drawing.Size(311, 39);
+            this.guna2GroupBox3.TabIndex = 57;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(51, 15);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(19, 21);
+            this.label14.TabIndex = 61;
+            this.label14.Text = "0";
+            // 
+            // guna2GroupBox4
+            // 
+            this.guna2GroupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.guna2GroupBox4.BorderThickness = 0;
+            this.guna2GroupBox4.Controls.Add(this.choicebox);
+            this.guna2GroupBox4.Controls.Add(this.textBox1);
+            this.guna2GroupBox4.Controls.Add(this.label9);
+            this.guna2GroupBox4.Controls.Add(this.label7);
+            this.guna2GroupBox4.Controls.Add(this.label10);
+            this.guna2GroupBox4.Controls.Add(this.textBox8);
+            this.guna2GroupBox4.Controls.Add(this.textBox7);
+            this.guna2GroupBox4.Controls.Add(this.dataGridView1);
+            this.guna2GroupBox4.Controls.Add(this.label11);
+            this.guna2GroupBox4.Controls.Add(this.guna2GroupBox3);
+            this.guna2GroupBox4.Controls.Add(this.label8);
+            this.guna2GroupBox4.Controls.Add(this.label1);
+            this.guna2GroupBox4.Controls.Add(this.label2);
+            this.guna2GroupBox4.Controls.Add(this.textBox6);
+            this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(137)))), ((int)(((byte)(220)))));
+            this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0);
+            this.guna2GroupBox4.FillColor = System.Drawing.Color.Empty;
+            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2GroupBox4.ForeColor = System.Drawing.Color.White;
+            this.guna2GroupBox4.Location = new System.Drawing.Point(70, 51);
+            this.guna2GroupBox4.Name = "guna2GroupBox4";
+            this.guna2GroupBox4.Size = new System.Drawing.Size(753, 547);
+            this.guna2GroupBox4.TabIndex = 58;
+            // 
+            // choicebox
+            // 
+            this.choicebox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.choicebox.BorderThickness = 0;
+            this.choicebox.Controls.Add(this.button3);
+            this.choicebox.Controls.Add(this.button1);
+            this.choicebox.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.choicebox.FillColor = System.Drawing.Color.Empty;
+            this.choicebox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.choicebox.ForeColor = System.Drawing.Color.White;
+            this.choicebox.Location = new System.Drawing.Point(622, 38);
+            this.choicebox.Name = "choicebox";
+            this.choicebox.Size = new System.Drawing.Size(128, 173);
+            this.choicebox.TabIndex = 57;
+            this.choicebox.Text = "Choice";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox1.BorderThickness = 0;
+            this.textBox1.CausesValidation = false;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox1.DefaultText = "1";
+            this.textBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox1.Location = new System.Drawing.Point(524, 9);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '\0';
+            this.textBox1.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox1.PlaceholderText = "";
+            this.textBox1.SelectedText = "";
+            this.textBox1.Size = new System.Drawing.Size(92, 22);
+            this.textBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.textBox1.TabIndex = 60;
+            this.textBox1.TabStop = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox8
+            // 
+            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox8.BorderThickness = 0;
+            this.textBox8.CausesValidation = false;
+            this.textBox8.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox8.DefaultText = "YYYYY";
+            this.textBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox8.ForeColor = System.Drawing.Color.White;
+            this.textBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox8.Location = new System.Drawing.Point(88, 9);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.PasswordChar = '\0';
+            this.textBox8.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox8.PlaceholderText = "";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.SelectedText = "";
+            this.textBox8.Size = new System.Drawing.Size(116, 22);
+            this.textBox8.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.textBox8.TabIndex = 59;
+            this.textBox8.TabStop = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox7.BorderThickness = 0;
+            this.textBox7.CausesValidation = false;
+            this.textBox7.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox7.DefaultText = "XXXXX";
+            this.textBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox7.ForeColor = System.Drawing.Color.White;
+            this.textBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox7.Location = new System.Drawing.Point(311, 9);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.PasswordChar = '\0';
+            this.textBox7.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(85)))), ((int)(((byte)(148)))));
+            this.textBox7.PlaceholderText = "";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.SelectedText = "";
+            this.textBox7.Size = new System.Drawing.Size(116, 22);
+            this.textBox7.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.textBox7.TabIndex = 58;
+            this.textBox7.TabStop = false;
             // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 516);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(52)))), ((int)(((byte)(98)))));
+            this.ClientSize = new System.Drawing.Size(1283, 685);
+            this.Controls.Add(this.guna2GroupBox4);
+            this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "CreateOrder";
             this.Text = "CreateOrder";
             this.Load += new System.EventHandler(this.CreateOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.guna2GroupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.guna2GroupBox2.ResumeLayout(false);
+            this.guna2GroupBox2.PerformLayout();
+            this.guna2GroupBox3.ResumeLayout(false);
+            this.guna2GroupBox3.PerformLayout();
+            this.guna2GroupBox4.ResumeLayout(false);
+            this.guna2GroupBox4.PerformLayout();
+            this.choicebox.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -443,7 +734,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
@@ -456,7 +746,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.DataGridViewTextBoxColumn instoreID;
         private System.Windows.Forms.DataGridViewTextBoxColumn warehouseID;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemId;
@@ -464,17 +753,29 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-    }
+		private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
+        
+        private Guna.UI2.WinForms.Guna2GroupBox choicebox;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox8;
+        private Guna.UI2.WinForms.Guna2TextBox textBox7;
+		private System.Windows.Forms.Label label14;
+	}
 }

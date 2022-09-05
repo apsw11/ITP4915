@@ -47,8 +47,8 @@ namespace ITP4915
 
 			if (sqlRd.Read())
 			{
-				labelEmpName.Text ="Name: " +(sqlRd["emp_id"].ToString());
-				labelEmpID.Text ="Employee ID: " +(sqlRd["emp_name"].ToString());
+				labelEmpName.Text ="Name: " +(sqlRd["emp_name"].ToString());
+				labelEmpID.Text ="Employee ID: " +(sqlRd["emp_id"].ToString());
 				labelPosition.Text ="Position: "+ (sqlRd["position"].ToString());
 
 
@@ -74,5 +74,16 @@ namespace ITP4915
 		{
 
 		}
-	}
+
+        private void closebutton_Click(object sender, EventArgs e)
+        {
+			this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			this.Close();
+
+		}
+    }
 }

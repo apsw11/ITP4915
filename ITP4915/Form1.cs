@@ -35,20 +35,11 @@ namespace ITP4915
 			profile p1 = new profile();
 			p1.setEmpID(Convert.ToString(empID));
 			DialogResult result = p1.ShowDialog();
+			
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			CreateOrder co = new CreateOrder();
-			
-			labelEmpID.Text ="Employee ID:" + empID;
-			//Convert.ToString (getEmpID());
 
-			if (getPosition()== "Manager") { //判斷顯示 Modify Item
-			buttonModifyItem.Visible = true;
-			}
-
-			
+		public void showBell() {
 
 			if (sqlConn.State == ConnectionState.Open)
 			{
@@ -61,7 +52,7 @@ namespace ITP4915
 
 			sqlConn.Open();
 			sqlCmd.Connection = sqlConn;
-			sqlCmd.CommandText = "SELECT * FROM ITP4915.instoreItem WHERE qty < 10 AND storeID = @storeID";
+			sqlCmd.CommandText = "SELECT instoreItem.storeID,Item.itemID,instoreItem.qty FROM ITP4915.instoreItem,Item WHERE instoreItem.itemID=Item.itemID AND instoreItem.qty < Item.reorderLv AND instoreItem.requested ='N' AND storeID =@storeID";
 			sqlCmd.CommandType = CommandType.Text;
 			sqlCmd.Parameters.AddWithValue("@storeID", getstoreID());
 			sqlRd = sqlCmd.ExecuteReader();
@@ -70,10 +61,39 @@ namespace ITP4915
 			{
 				buttonBell.Visible = true;
 				buttonBell.Enabled = true;
+				
 			}
 			sqlRd.Close();
 			sqlConn.Close();
 			sqlCmd.Parameters.Clear();
+
+		}
+
+
+		public class bell
+		{
+			public static Boolean Bell;
+			
+		}
+
+
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			CreateOrder co = new CreateOrder();
+			showBell();
+			labelEmpID.Text ="Employee ID:" + empID;
+			//Convert.ToString (getEmpID());
+
+			if (getPosition()== "Manager") { //判斷顯示 Modify Item
+			buttonModifyItem.Visible = true;
+				buttonSupplier.Visible = true;
+				button2.Visible = true;
+			}
+
+
+
+
 		}
 
 		private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -83,7 +103,7 @@ namespace ITP4915
 
 		}
 
-		private string getPosition()
+		private string getPosition() 
 		{
 			return position;
 		}
@@ -132,6 +152,7 @@ namespace ITP4915
 
         private void button4_Click(object sender, EventArgs e)
         {
+			showBell();
 			OpenChildForm(new Home(), sender);
 		}
 
@@ -142,11 +163,14 @@ namespace ITP4915
 
         private void button5_Click(object sender, EventArgs e)
         {
+			showBell();
 			OpenChildForm(new CreateOrder(), sender);
 		}
 
         private void button6_Click(object sender, EventArgs e)
         {
+			showBell();
+			ViewSalesOrder.ID.storeID = getstoreID();
 			OpenChildForm(new ViewSalesOrder(), sender);
 		}
 
@@ -158,6 +182,7 @@ namespace ITP4915
 
 		private void button7_Click(object sender, EventArgs e)
 		{
+			showBell();
 			OpenChildForm(new Items(), sender);
 		}
 
@@ -168,15 +193,47 @@ namespace ITP4915
 
 		private void buttonBell_Click(object sender, EventArgs e) //未搬去childFrom,唔知搬唔搬好
 		{
-			replenishment r = new replenishment();
-			r.setstoreID(getstoreID());
-			r.setEmpID(getEmpID());
-			DialogResult result = r.ShowDialog();
+			buttonBell.Visible = false;
+			replenishment.ID.storeID = getstoreID();
+			replenishment.ID.EmpID= getEmpID();
+			OpenChildForm(new replenishment(), sender);
+			
 		}
 
         private void buttonViewCustomer_Click(object sender, EventArgs e)
         {
+			showBell();
 			OpenChildForm(new ViewCustomer(), sender);
+		}
+
+        private void closebutton_Click(object sender, EventArgs e)
+        {
+			this.Close();
+		}
+
+		private void buttonSupplier_Click(object sender, EventArgs e)
+		{
+			showBell();
+			OpenChildForm(new modifySupplier(), sender);
+		}
+
+		private void buttonViewROrder_Click(object sender, EventArgs e)
+		{
+			showBell();
+			ViewrReplenishmentOrder.ID.storeID = getstoreID();
+			OpenChildForm(new ViewrReplenishmentOrder(), sender);
+		}
+
+		private void buttonViewDepositOrder_Click(object sender, EventArgs e)
+		{
+			showBell();
+			ViewDepositOrder.ID.storeID = getstoreID();
+			OpenChildForm(new ViewDepositOrder(), sender);
+		}
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+			OpenChildForm(new Staff(), sender);
 		}
     }
 }

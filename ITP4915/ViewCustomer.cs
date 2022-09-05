@@ -161,8 +161,25 @@ namespace ITP4915
             
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+		private void textBox4_TextChanged(object sender, EventArgs e)
+		{
+            search = null;
+            search = " where (customerID like '%" + textBox4.Text + "%' ";
+            search += "or customerName like '%" + textBox4.Text + "%' ";
+            search += "or address like '%" + textBox4.Text + "%' ";
+            search += "or PhoneNum like '%" + textBox4.Text + "%')";
+
+
+            dataGridView1.DataSource = upLoadData();
+        }
+
+		private void textBox4_TextChanged_1(object sender, EventArgs e)
+		{
             search = null;
             search = " where (customerID like '%" + textBox4.Text + "%' ";
             search += "or customerName like '%" + textBox4.Text + "%' ";
@@ -172,8 +189,19 @@ namespace ITP4915
 
             dataGridView1.DataSource = upLoadData();
 
-
         }
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button5_Click_1(object sender, EventArgs e)
+		{
+
+		}
+
+	
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {

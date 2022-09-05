@@ -20,32 +20,20 @@ namespace ITP4915
 		MySqlDataAdapter DtA = new MySqlDataAdapter();
 		MySqlDataReader sqlRd;
 		DataSet DS = new DataSet();
+		string sqlQuery;
+		int RID;
 
-		string storeID;
-		string empID;
 		public replenishment()
 		{
 			InitializeComponent();
 		}
 
-		private string getEmpID()
-		{
-			return empID;
-		}
 
-		internal void setEmpID(string v)
-		{
-			empID = v;
-		}
 
-		internal void setstoreID(string v)
-		{
-			storeID = v;
-		}
+		public class ID { 
+		public static string storeID;
+		public static string EmpID;
 
-		private string getstoreID()
-		{
-			return storeID;
 		}
 
 		private void replenishment_Load(object sender, EventArgs e)
@@ -55,17 +43,92 @@ namespace ITP4915
 
 			sqlConn.Open();
 			sqlCmd.Connection = sqlConn;
-			sqlCmd.CommandText = "SELECT * FROM ITP4915.instoreItem WHERE qty < 10 AND storeID = @storeID";
+			sqlCmd.CommandText = "SELECT instoreItem.storeID,Item.itemID,instoreItem.qty,Item.reorderAmount FROM ITP4915.instoreItem,Item WHERE instoreItem.itemID=Item.itemID AND  instoreItem.requested ='N' AND instoreItem.qty < Item.reorderLv AND storeID =@storeID";
 			sqlCmd.CommandType = CommandType.Text;
-			sqlCmd.Parameters.AddWithValue("@storeID", getstoreID());
+			sqlCmd.Parameters.AddWithValue("@storeID", ID.storeID);
 			sqlRd = sqlCmd.ExecuteReader();
 			sqlDt.Load(sqlRd);
 			dataGridView1.DataSource = sqlDt;
 			sqlRd.Close();
 			sqlConn.Close();
 
-			label3.Text = "employee ID:" + getEmpID();
+			label3.Text = "employee ID:" + ID.EmpID;
 
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			sqlConn.Open();
+			sqlQuery = "INSERT INTO replenishmentOrder VALUES(NULL,now(),'" + ID.EmpID + "','" + ID.storeID + "' , default )";
+			sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+			sqlRd = sqlCmd.ExecuteReader();
+			sqlConn.Close();
+
+
+			if (sqlConn.State == ConnectionState.Open)
+			{
+				sqlConn.Close();
+			}
+
+			sqlConn.Open();
+			sqlQuery = "Select MAX(RorderID) FROM replenishmentOrder; ";
+			sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+			int RorderId = (int)sqlCmd.ExecuteScalar();
+			sqlConn.Close();
+
+			sqlConn.Open();
+			sqlQuery = "INSERT INTO Delivery VALUES(NULL,now(),null,null,null," + RorderId + ",'In Warehouse"+"' )";
+			sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+			sqlRd = sqlCmd.ExecuteReader();
+			sqlConn.Close();
+
+
+
+
+
+			for (int i = 0; i < dataGridView1.Rows.Count - 1; i++) { 
+			
+				
+					sqlConn.Open();
+					sqlQuery = "Select MAX(RorderID) FROM replenishmentOrder; ";
+					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+					int orderId = (int)sqlCmd.ExecuteScalar();
+					sqlConn.Close();
+
+
+				
+
+
+					sqlConn.Open();
+					sqlQuery = "INSERT INTO RorderItem VALUES('" +orderId+"',"+" '"+dataGridView1.Rows[i].Cells[1].Value+"', "+ dataGridView1.Rows[i].Cells[3].Value+" )";
+					sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+					sqlRd = sqlCmd.ExecuteReader();					
+					sqlConn.Close();
+
+
+				
+
+			}
+
+			for (int i = 0; i < dataGridView1.Rows.Count - 1; i++ ) {
+				sqlConn.Open();
+				sqlQuery = "UPDATE instoreItem SET requested ='Y' " + "WHERE itemID= '" + dataGridView1.Rows[i].Cells[1].Value + "'" + " AND instoreItem.storeID ='" + ID.storeID + "'";
+				sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
+				sqlCmd.ExecuteNonQuery();
+				sqlConn.Close();
+			}
+
+			MessageBox.Show("Order Created!");
+			Form1.bell.Bell = false;
+			Close();
+
+			
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			int x = dataGridView1.CurrentCell.RowIndex;
+			dataGridView1.Rows.RemoveAt(x);
 		}
 	}
 }
